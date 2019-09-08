@@ -14,6 +14,7 @@ const app = express();
 app.use(express.static('public'))
 
 // create counters for comments, contacts, products, vehicles
+// ! WHY AREN'T THESE WORKING?!?!?!?!? !
 let commentCounter = comments.length;
 let contactCounter = contacts.length;
 let productCounter = products.length;
@@ -161,6 +162,10 @@ app.post('/products', (req, res) => {
     products.push(newProduct);
     res.json(products[products.length - 1])
 })
+
+
+
+
 
 
 
