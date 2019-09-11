@@ -1,4 +1,4 @@
-module.exports =[
+eexports.contacts = [
   {
     "_id": 1,
     "name": "Dale Cooper",
