@@ -14,11 +14,11 @@ const app = express();
 app.use(express.static('public'))
 
 // create counters for comments, contacts, products, vehicles
-// ! WHY AREN'T THESE WORKING?!?!?!?!? !
-let commentCounter = comments.length;
-let contactCounter = contacts.length;
-let productCounter = products.length;
-let vehicleCounter = vehicles.length;
+// // ! WHY AREN'T THESE WORKING?!?!?!?!? !
+// let commentCounter = comments.length;
+// let contactCounter = contacts.length;
+// let productCounter = products.length;
+// let vehicleCounter = vehicles.length;
 
 const port = process.env.PORT || 4001;
 
