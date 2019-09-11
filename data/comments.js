@@ -1,4 +1,4 @@
-module.exports = [
+exports.comments = [
   {
     "_id": 1,
     "body": "ACA is great!",
@@ -20,3 +20,4 @@ module.exports = [
     "postId": 1
   }
 ];
+
