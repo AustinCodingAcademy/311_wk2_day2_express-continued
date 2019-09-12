@@ -1,12 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const {comments} = require('./data/comments');
-const {contacts} = require('./data/contacts');
-const {products} = require('./data/products');
-const {vehicles} = require('./data/vehicles');
-const app = express();
 
-console.log(comments)
+const app = express();
+let vehicleRoutes = require('./routes/vehicles')
+
+app.use(vehicleRoutes)
+
+
 
 const port = process.env.PORT || 4001;
 
@@ -15,34 +15,6 @@ app.use('/', express.static('public'));
 
 //using body-parser to serve json-style
 app.use(bodyParser.json());
-
-//get routes
-app.get('/comments', (req, res) => {
-    console.log('comments' + comments)
-    res.json(comments)
-})
-app.get('/contacts', (req, res) => {
-    res.json(contacts)
-})
-app.get('/products', (req, res) => {
-    res.json(products)
-})
-app.get('/vehicles', (req, res) => {
-    res.json(vehicles)
-})
-
-//more routes
-app.get('/:route', (req, res) => {
-	let route;
-
-	if ( req.params.route === "comments" ) { route = comments }
-	if ( req.params.route === "contacts" ) { route = contacts }
-	if ( req.params.route === "products" ) { route = products }
-	if ( req.params.route === "vehicles" ) { route = vehicles }
-
-	res.json( route );
-
-})
 
 //puting listening port down here
 app.listen(port, () => {
