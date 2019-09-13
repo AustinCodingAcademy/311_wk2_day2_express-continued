@@ -1,11 +1,5 @@
 module.exports =[
   {
-    "_id": 1,
-    "name": "Dale Cooper",
-    "occupation": "FBI Agent",
-    "avatar": "https://upload.wikimedia.org/wikipedia/en/5/50/Agentdalecooper.jpg"
-  },
-  {
     "_id": 2,
     "name": "Spike Spiegel",
     "occupation": "Bounty Hunter",
