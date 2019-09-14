@@ -2,10 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-let vehicleRoutes = require('./routes/vehicles')
 
-app.use(vehicleRoutes)
+//declaring routes
+let commentRoute = require('./routes/comments')
+let contactRoute = require('./routes/contacts')
+let productRoute = require('./routes/products')
+let vehicleRoute = require('./routes/vehicles')
 
+app.use(commentRoute)
+app.use(contactRoute)
+app.use(productRoute)
+app.use(vehicleRoute)
 
 
 const port = process.env.PORT || 4001;
@@ -14,7 +21,7 @@ const port = process.env.PORT || 4001;
 app.use('/', express.static('public'));
 
 //using body-parser to serve json-style
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 
 //puting listening port down here
 app.listen(port, () => {

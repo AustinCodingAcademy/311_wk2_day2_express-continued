@@ -5,19 +5,19 @@ const router = express.Router();
 const contacts = require('../data/contacts');
 let counter = contacts.length;
 
-
 //CONTACTS
-app.get('/contacts', (req, res) => {
+router.get('/contacts', (req, res) => {
     res.json(contacts)
 })
-app.get('/contacts/:id', (req, res) => {
+router.get('/contacts/:id', (req, res) => {
 	let contact = contacts.find(c => c._id === req.params.id)
-	console.log(contact)
     res.json(contact)
 })
-app.post('/contacts', (req, res) => {
+router.post('/contacts', (req, res) => {
 	let newContact = req.body;
-	//newContact._id = counter + 1;
+	newContact._id = counter + 1;
 	comments.push(newContact);
 	res.json(newContact);
 })
+
+module.exports = router;
