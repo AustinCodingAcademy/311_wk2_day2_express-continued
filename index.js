@@ -10,8 +10,6 @@ const port = process.env.PORT || 4001;
 
 app.use('/', express.static('public'))
 
-app.use(express.static('public'))
-
 app.use(bodyParser.json());
 
 app.use(comments);
