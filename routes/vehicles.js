@@ -1,23 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-//import the vehicles array
-const vehicles = require('../data/vehicles');
-let counter = vehicles.length;
+const vehiclesController = require('../controllers/vehicles.js');
 
-//VEHICLES
-router.get('/vehicles', (req, res) => {
-    res.json(vehicles)
-})
-router.get('/vehicles/:id', (req, res) => {
-	let vehicle = vehicles.find(c => c._id === req.params.id)
-    res.json(vehicle)
-})
-router.post('/vehicles', (req, res) => {
-	let newVehicle = req.body;
-	newVehicle._id = counter + 1;
-	vehicles.push(newVehicle);
-	res.json(newVehicle);
-})
+router.get('/vehicles', vehiclesController.list);
+
+router.get('/vehicles/:id', vehiclesController.show);
+
+router.get('/vehicles', vehiclesController.create);
 
 module.exports = router;
