@@ -1,23 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const commentsController = require('../controllers/comments')
+//const {list,show,create,update,remove} = require('../controllers/comments')
 
-//import the comments array
-const comments = require('../data/comments');
-let counter = comments.length;
-
-//COMMENTS
-router.get('/comments', (req, res) => {
-    res.json(comments)
-})
-router.get('/comments/:id', (req, res) => {
-	let comment = comments.find(c => c._id === req.params.id)
-    res.json(comment)
-})
-router.post('/comments', (req, res) => {
-	let newComment = req.body;
-	newComment._id = counter + 1;
-	comments.push(newComment);
-	res.json(newComment);
-})
+//commentS
+router.get('/comments', commentsController.list)
+router.get('/comment/:id', commentsController.show)
+router.post('/comments', commentsController.create)
+// router.put('/comments', update)
+// router.delete('/comments', remove)
 
 module.exports = router;

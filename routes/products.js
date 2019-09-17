@@ -1,23 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const productsController = require('../controllers/products')
+//const {list,show,create,update,remove} = require('../controllers/products')
 
-//import the products array
-const products = require('../data/products');
-let counter = products.length;
-
-//PRODUCTS
-router.get('/products', (req, res) => {
-    res.json(products)
-})
-router.get('/products/:id', (req, res) => {
-	let product = products.find(p => p._id === req.params.id)
-    res.json(product)
-})
-router.post('/products', (req, res) => {
-	let newProduct = req.body;
-	//newProduct._id = counter + 1;
-	comments.push(newProduct);
-	res.json(newProduct);
-})
+//productS
+router.get('/products', productsController.list)
+router.get('/product/:id', productsController.show)
+router.post('/products', productsController.create)
+// router.put('/products', update)
+// router.delete('/products', remove)
 
 module.exports = router;

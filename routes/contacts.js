@@ -1,23 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const contactsController = require('../controllers/contacts')
+//const {list,show,create,update,remove} = require('../controllers/contacts')
 
-//import the contacts array
-const contacts = require('../data/contacts');
-let counter = contacts.length;
-
-//CONTACTS
-router.get('/contacts', (req, res) => {
-    res.json(contacts)
-})
-router.get('/contacts/:id', (req, res) => {
-	let contact = contacts.find(c => c._id === req.params.id)
-    res.json(contact)
-})
-router.post('/contacts', (req, res) => {
-	let newContact = req.body;
-	newContact._id = counter + 1;
-	comments.push(newContact);
-	res.json(newContact);
-})
+//contactS
+router.get('/contacts', contactsController.list)
+router.get('/contact/:id', contactsController.show)
+router.post('/contacts', contactsController.create)
+// router.put('/contacts', update)
+// router.delete('/contacts', remove)
 
 module.exports = router;
