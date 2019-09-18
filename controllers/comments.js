@@ -4,12 +4,12 @@ const comments = require("../data/comments")
 const show = (req, res) => {
     // this function will tell whether comments exist
     const foundComments = comments.some(
-        comments => comments._id === parseInt(req.params.id)
+        comments => comments._id === req.params.id
     );
     // and if comments are found... 
-    if (foundComments === true) {
+    if (foundComments) {
         res.json(
-            comments.filter(comment => comment.id === parseInt(req.params.id))
+            comments.filter(comment => comment.id === req.params.id)
         );
     // if it doesn't find that comment...
     } else {
