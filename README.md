@@ -9,23 +9,23 @@ Initialize and run the app: `npm install` && `npm start`.
 A web page has been created for us. Our job is to build the server.
 
 
-## Part 1 - Index.js
+## Part 1 - Index.js * done
 
 * This is the starting point of the server, put all code here
 
-### Express.static
+### Express.static * done
 
 * After "app" is defined, add the `express.static` middleware to express referencing the "public" folder
 * Navigate to http://localhost:4000 to see the web page
 
-### Body-parser
+### Body-parser * done
 
 * After "express.static", add body parser middleware to express
   * Remember: `bodyParser.json()`
 
 ### Create express routes to get all things
 
-* Between lines 2 and 3, require the data for from the following .js files:
+* Between lines 2 and 3, require the data for from the following .js files: 
   * /data/contacts
   * /data/vehicles
   * /data/comments
