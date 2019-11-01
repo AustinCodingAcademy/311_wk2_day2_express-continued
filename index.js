@@ -10,7 +10,7 @@ const products = require("./data/products")
 const vehicles = require("./data/vehicles")
 
 //app.use()
-app.use(bodyParser.json ())
+// app.use(bodyParser.json ())
 
 //app.get()
 app.get('/comments', (req, res) => {
@@ -75,15 +75,6 @@ app.get('/vehicles/:userId', (req, res) => {
   }
 })
 
-app.post('/users', (req, res) => {
-  users.push(req.body); 
-  let lastUser = users[users.length -1]
-  lastUser._id = counter
-  counter++
-  console.log(req.body)
-  res.json(lastUser)
-})
-
 //app.post()
 app.post('/comments', (req, res) => {
   comments.push(req.body); 
@@ -95,31 +86,32 @@ app.post('/comments', (req, res) => {
 })
 
 app.post('/contacts', (req, res) => {
-  users.push(req.body); 
-  let lastUser = users[users.length -1]
-  lastUser._id = counter
+  contacts.push(req.body); 
+  let newContact = contacts[contacts.length -1]
+  newContact._id = counter
   counter++
   console.log(req.body)
-  res.json(lastUser)
+  res.json(newContact)
 })
 
 app.post('/products', (req, res) => {
-  users.push(req.body); 
-  let lastUser = users[users.length -1]
-  lastUser._id = counter
+  products.push(req.body); 
+  let newProduct = products[products.length -1]
+  newProduct._id = counter
   counter++
   console.log(req.body)
-  res.json(lastUser)
+  res.json(newProduct)
 })
 
 app.post('/vehicles', (req, res) => {
-  users.push(req.body); 
-  let lastUser = users[users.length -1]
-  lastUser._id = counter
+  vehicles.push(req.body); 
+  let newVehicle = vehicles[vehicles.length -1]
+  newVehicle._id = counter
   counter++
   console.log(req.body)
-  res.json(lastUser)
+  res.json(newVehicle)
 })
+
 
 
 app.listen(port, () => {
