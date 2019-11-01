@@ -3,10 +3,10 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 4001;
 
-const productRoutes = require('/routes/products');
-const contactRoutes = require('/routes/contacts');
-const vehicleRoutes = require('/routes/vehicles');
-const commentRoutes = require('/routes/comments');
+const productRoutes = require('./routes/products');
+const contactRoutes = require('./routes/contacts');
+const vehicleRoutes = require('./routes/vehicles');
+const commentRoutes = require('./routes/comments');
 
 app.use(productRoutes);
 app.use(contactRoutes);
