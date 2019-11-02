@@ -8,12 +8,6 @@ app.use(bodyParser.json())
 app.use(express.static('public'))
 
 
-const productRoutes = require('./routes/products')
-app.use(productRoutes)
-
-
-
-
 
 const port = process.env.PORT || 4001;
 app.listen(port, () => {
