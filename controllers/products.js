@@ -50,11 +50,11 @@ exports.putProduct = (req, res) => {
               product.price = upProduct.price ? upProduct.price : product.price
               product.catagory = upProduct.catagory ? upProduct.catagory : product.catagory
               product.reviews = upProduct.reviews ? upProduct.reviews : product.reviews
-            res.json ({msg: `The user ${req.params.productId} was updated.`})
+            res.json ({msg: `The product ${req.params.productId} was updated.`})
           }
         }) 
     }else{
-      res.status(400).json({msg: `No user with the id of ${req.params.productId}`})}
+      res.status(400).json({msg: `No product with the id of ${req.params.productId}`})}
   }
 
   //Delete Product:
