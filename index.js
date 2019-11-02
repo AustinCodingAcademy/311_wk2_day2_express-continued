@@ -1,5 +1,7 @@
 const express = require("express");
+// creates express app
 const app = express();
+
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json())
