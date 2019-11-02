@@ -1,11 +1,10 @@
 const contactList = require('../data/contacts')
 let counter = contactList.length +1
-//Get All Contacts
 
+//Get All Contacts
 exports.contactGetAll = (req, res) => {
     res.json(contactList)
   }
-
 
 //Get Specified Contact
 

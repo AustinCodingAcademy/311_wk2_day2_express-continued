@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 //---------------Project Code Below------------------//
 
 //Added Router Requirement
-const contactList = require('../data/contacts')
 const router = express.Router()
 //controller links go here:
 const contactController = require('../controllers/contacts')
