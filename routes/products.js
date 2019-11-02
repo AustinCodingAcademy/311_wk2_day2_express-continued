@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const proconch = require("../controller/pruducts")
+const proconch = require("../controller/products")
 
 router.get("/products", proconch.list)
 

@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const proconch = require("../controller/pruducts")
+const proconch = require("../controller/vehicles")
 
-router.get("/products", proconch.list)
+router.get("/vehicles", proconch.list)
 
-router.get("/products/:id", proconch.show)
+router.get("/vehicles/:id", proconch.show)
 
-router.post("/products", proconch.create)
+router.post("/vehicles", proconch.create)
 
 module.exports = router
