@@ -20,12 +20,8 @@ router.get('/comments/:productId', commentController.getSpecifiedComment)
 // //POST Method
 router.post('/comments', commentController.postNewComment)
 
-
-
 // //PUT Method - update a user
 router.put('/comments/:productId', commentController.putComment)
-
-
 
 // //DELETE Method
 router.delete('/comments/:productId', commentController.deleteComment);
