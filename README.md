@@ -1,4 +1,4 @@
-# Express Practice
+<!-- # Express Practice
 
 ## Setup
 
@@ -13,31 +13,31 @@ A web page has been created for us. Our job is to build the server.
 
 * This is the starting point of the server, put all code here
 
-### Express.static
+### Express.static -->
 
-* After "app" is defined, add the `express.static` middleware to express referencing the "public" folder
+<!-- * After "app" is defined, add the `express.static` middleware to express referencing the "public" folder
 * Navigate to http://localhost:4000 to see the web page
 
 ### Body-parser
 
 * After "express.static", add body parser middleware to express
-  * Remember: `bodyParser.json()`
+  * Remember: `bodyParser.json()` -->
 
-### Create express routes to get all things
+<!-- ### Create express routes to get all things -->
 
-* Between lines 2 and 3, require the data for from the following .js files:
+<!-- * Between lines 2 and 3, require the data for from the following .js files:
   * /data/contacts
   * /data/vehicles
   * /data/comments
-  * /data/products
-* Add `app.get()` routes for the following:
+  * /data/products -->
+<!-- * Add `app.get()` routes for the following:
   * "/contacts"
   * "/vehicles"
   * "/comments"
   * "/products"
-* `res.json()` the appropriate array from the "require" statements above
+* `res.json()` the appropriate array from the "require" statements above -->
 
-### Create express routes to get one thing
+<!-- ### Create express routes to get one thing
 
 * Add `app.get()` routes for the following:
   * "/contacts/:id"
@@ -47,7 +47,7 @@ A web page has been created for us. Our job is to build the server.
 * Make sure to include the path variable for id (above)
 * Use `req.params.id` to .find() the item from the appropriate array (by its _id)
   * Example: `i._id == req.params.id`
-* `res.json()` the item found
+* `res.json()` the item found -->
 
 ### Create express routes to create one thing
 
