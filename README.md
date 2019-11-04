@@ -85,16 +85,16 @@ Once completed, the web page should be able to list out the information, create 
   * Ex. for each.. `app.use(<IMPORTED_ROUTER>)` -->
 
 
-# Part 3 - Controllers
+<!-- # Part 3 - Controllers
 
 * Create a folder called "controllers" on the top level (next to data, routes)
 * Create the following controller files under this folder:
   * contacts.js
   * vehicles.js
   * comments.js
-  * products.js
-* Move the appropriate "data" from the router files to the controller files
-  * Ex. move `const comments = require("../data/comments")` into the controller file so it has access to the array
+  * products.js -->
+<!-- * Move the appropriate "data" from the router files to the controller files
+  <!-- * Ex. move `const comments = require("../data/comments")` into the controller file so it has access to the array -->
 * Take the code from each router file and move it into the corresponding controller file
   * Make variables (`const <something>`) for each function
   * We will make three functions in each file: "list", "show" and "create"
@@ -103,8 +103,8 @@ Once completed, the web page should be able to list out the information, create 
     *  `module.exports = { list, show, create }`
 * Import and use the controller functions in the appropriate router
   * Ex. `app.get('/comments', commentController.list)`
-* When complete your routes files should look like this:
-
+* When complete your routes files should look like this: -->
+<!-- 
 ```
 const express = require('express')
 const router = express.Router()
@@ -118,6 +118,6 @@ router.get('/vehicles/:id', vehiclesController.show)
 router.post('/vehicles', vehiclesController.create)
 
 module.exports = router
-```
+``` -->
 
 
