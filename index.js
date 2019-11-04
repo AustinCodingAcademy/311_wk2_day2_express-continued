@@ -10,21 +10,20 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // CRUD Comments
-const commentRoutes = require('./routes/comments');
-app.use(commentRoutes)
+const commentRoutes = require("./routes/comments");
+app.use(commentRoutes);
 
 // CRUD Contacts
-const contactRoutes = require('./routes/contacts');
-app.use(contactRoutes)
+const contactRoutes = require("./routes/contacts");
+app.use(contactRoutes);
 
 // CRUD Products
-const productRoutes = require('./routes/products');
-app.use(productRoutes)
+const productRoutes = require("./routes/products");
+app.use(productRoutes);
 
 // CRUD Vehicles
-const vehicleRoutes = require('./routes/vehicles');
-app.use(vehicleRoutes)
-
+const vehicleRoutes = require("./routes/vehicles");
+app.use(vehicleRoutes);
 
 // Start port?
 const port = process.env.PORT || 4001;
