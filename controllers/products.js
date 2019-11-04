@@ -1,16 +1,16 @@
 const products = require("../data/products")
 
 //list
-exports.list = function list(res, req) {
+exports.list = function list(req, res) {
   res.json(products);
 }
 // show
-exports.show = function show(res, req) {
+exports.show = function show(req, res) {
   let product = products.find(i => i._id == req.params.id);
   res.json(product);
 }
 // create
-exports.create = function create(res, req) {
+exports.create = function create(req, res) {
   let body = req.body;
   let newProduct = {
     _id: products.length + 1,
