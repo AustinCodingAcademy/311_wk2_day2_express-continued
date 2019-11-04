@@ -49,7 +49,7 @@ A web page has been created for us. Our job is to build the server.
   * Example: `i._id == req.params.id`
 * `res.json()` the item found -->
 
-### Create express routes to create one thing
+<!-- ### Create express routes to create one thing
 
 * Add `app.post()` routes for the following:
   * "/contacts"
@@ -59,7 +59,7 @@ A web page has been created for us. Our job is to build the server.
 * Add the information from the body to the appropriate array
   * Figure out how to increment each `_id` by one and add this _id to "req.body"
   * Add `postId: 1` to "req.body"
-  * Finally.. `<ARRAY>.push(req.body)`
+  * Finally.. `<ARRAY>.push(req.body)` -->
 
 ### Summary
 

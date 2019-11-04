@@ -101,8 +101,26 @@ app.post("/vehicles", (req, res) => {
   res.json(vehicles);
 });
 
-app.post("/comments", (req, res) => {});
-app.post("/products", (req, res) => {});
+app.post("/comments", (req, res) => {
+  const newComment = {
+    _id: commentsIdBase++,
+    body: req.body.body,
+    postId: 1
+  };
+
+  comments.push(newComment);
+  res.json(comments);
+});
+
+app.post("/products", (req, res) => {
+  const newProduct = {
+    _id: productsIdBase++,
+    name: req.body.name,
+    description: req.body.description
+  }
+  products.push(newProduct);
+  res.json(products);
+});
 
 // Listener
 app.listen(port, () => {
