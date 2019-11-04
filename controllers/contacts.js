@@ -1,4 +1,4 @@
-const contacts = require('../data/comments');
+const contacts = require('../data/contacts');
 let contCounter = contacts.length +1;
 
 // Gets a list of all contacts

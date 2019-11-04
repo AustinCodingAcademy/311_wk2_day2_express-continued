@@ -18,7 +18,7 @@ if(productsId) {
 
 // Creates a product
 const create = (req, res) => {
-    res.json(producst.push({
+    res.json(products.push({
         "name": req.body.name,
         "description": req.body.description,
         "rating": req.body.rating,

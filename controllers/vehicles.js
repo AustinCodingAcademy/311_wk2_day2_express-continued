@@ -1,5 +1,5 @@
 const vehicles = require('../data/vehicles');
-const vehCounter = vehicles.length +1;
+let vehCounter = vehicles.length +1;
 
 // Show all vehicles
 const list = (req, res) => {
