@@ -61,12 +61,12 @@ A web page has been created for us. Our job is to build the server.
   * Add `postId: 1` to "req.body"
   * Finally.. `<ARRAY>.push(req.body)` -->
 
-### Summary
+<!-- ### Summary
 
-Once completed, the web page should be able to list out the information, create new information and view one item of the information. We don't need to worry about update or delete.
+Once completed, the web page should be able to list out the information, create new information and view one item of the information. We don't need to worry about update or delete. -->
 
 
-# Part 2 - Routes
+<!-- # Part 2 - Routes
 
 * Create a folder called "routes" on the top level (next to data)
 * Create the following route files under this folder:
@@ -76,13 +76,13 @@ Once completed, the web page should be able to list out the information, create 
   * products.js
 * The first two lines of each file should consist of:
   * `const express = require('express')`
-  * `const router = express.Router()`
-* Use the router to move the appropriate routes into the appropriate files
-  * Ex. `app.get('/contacts')` in "index.js" becomes `router.get('/contacts')` in "routes/contacts.js"
-  * Make sure you move the appropriate "data" from the index.js file into the new file
-  * Make sure you export the router from each file
+  * `const router = express.Router()` -->
+<!-- * Use the router to move the appropriate routes into the appropriate files -->
+  <!-- * Ex. `app.get('/contacts')` in "index.js" becomes `router.get('/contacts')` in "routes/contacts.js" -->
+  <!-- * Make sure you move the appropriate "data" from the index.js file into the new file -->
+  <!-- * Make sure you export the router from each file
 * Import/require and use the routers in index.js
-  * Ex. for each.. `app.use(<IMPORTED_ROUTER>)`
+  * Ex. for each.. `app.use(<IMPORTED_ROUTER>)` -->
 
 
 # Part 3 - Controllers
