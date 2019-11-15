@@ -1,104 +1,107 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const comments = require("./data/comments");
-const contacts = require("./data/contacts");
-const products = require("./data/products");
-const vehicles = require("./data/vehicles");
+const uuidv1 = require('uuid/v1');
+const comments = require("./data/comments")
+const contacts = require("./data/contacts")
+const products = require("./data/products")
+const vehicles = require("./data/vehicles")
+
+const app = express();
+const port = process.env.PORT || 4001;
+let commentCounter = comments.length;
+console.log(commentCounter);
+
+app.use(express.static('public'));
+app.use(bodyParser.json);
+
+app.get("/comments", (req, res) => {
+    res.json(comments);
+})
+
+app.get("/comments/:id", (req, res) => {
+    const id = req.params.id;
+    const comment = comments.find(comment => comment._id === Number(id));
+    res.json(comment);
+})
+
+app.post("/comments", (req, res) => {
+    let newComment = {
+        _id: commentCounter + 1,
+        body: req.body.body,
+        postId: 1
+    }
+    console.log(newComment);
+})
 
 let counter = contacts.length
 
+app.use(express.static("public"));
+app.use(bodyParser.json())
 
-const app = express();
 
-const port = process.env.PORT || 4001;
 
-app.use(express.static("public"))
-app.use(bodyParser.json());
+
+app.get('/comments', (req, res) => {
+    res.json(comments)
+})
+
+app.get('/comments/:id', (req, res) => {
+    const id = req.params.id;
+
+    const match = comments.find(comment => comment._id === Number(id))
+    res.json(match)
+})
+
+app.get('/contacts', (req, res) => {
+    res.json(contacts)
+})
+
+app.get('/contacts/:id', (req, res) => {
+    const id = req.params.id;
+
+    const match1 = contacts.find(contact => contact._id === Number(id))
+    res.json(match1)
+})
+
+app.post('/contacts', (req, res) => {
+    contacts.push({
+        _id: uuidv1,
+        name: "Jerry",
+        occupation: "Dead Head",
+        avatar: "asfasdg"
+    })
+    res.json(contacts)
+})
+
+
+app.get('/products', (req, res) => {
+    res.json(products)
+})
+
+app.get('/products/:id', (req, res) => {
+    const id = req.params.id;
+
+    const match2 = products.find(product => product._id === Number(id))
+    res.json(match2)
+})
+
+app.get('/vehicles', (req, res) => {
+    res.json(vehicles)
+})
+
+app.get('/vehicles/:id', (req, res) => {
+    const id = req.params.id;
+
+    const match3 = vehicles.find(vehicle => vehicle._id === Number(id))
+    res.json(match3)
+})
+
+
+
 
 app.listen(port, () => {
     console.log(`Web server is listening on port ${port}!`);
 });
-
-app.get("/comments", (res, req) => {
-    res.json(comments);
-})
-
-app.get("/contacts", (res, req) => {
-    res.json(contacts);
-})
-
-app.get("/vehicles", (res, req) => {
-    res.json(vehicles);
-})
-
-app.get("/products", (res, req) => {
-    res.json(products);
-})
-
-app.get("/comments/:id", (res, req) => {
-    const id = req.params.id
-    const match = comments.find(comment => comment._id == Number(id));
-    res.json(comments);
-    console.log(match);
-})
-
-app.get("/contacts/:id", (res, req) => {
-    const id = req.params.id
-    const match = contacts.find(contacts => contacts._id == Number(id));
-    res.json(contacts);
-    console.log(match);
-    res.json(contacts);
-})
-
-app.get("/vehicles:/id", (res, req) => {
-    const id = req.params.id
-    const match = vehicles.find(vehicles => vehicles._id == Number(id));
-    res.json(vehicles);
-    console.log(match);
-    res.json(vehicles);
-})
-
-app.get("/products/:id", (res, req) => {
-    const id = req.params.id
-    const match = products.find(products => products._id == Number(id));
-    res.json(products);
-    console.log(match);
-    res.json(products);
-})
-
-/*
-  app.post('/', function (req, res) {
-  res.send('POST request to the homepage')
-})
-*/
-app.post("/comments", (res, req) => {
-    res.json(comments);
-})
-
-app.post("/contacts", (res, req) => {
-    contacts.push(
-        {
-        _id: (counter += 1),
-        postId: 1,
-        req.body
-
-        }
-    )
-    req.body = {
-
-    }
-    
-    res.json(contacts);
-})
-
-app.post("/vehicles", (res, req) => {
-    res.json(vehicles);
-})
-
-app.post("/products", (res, req) => {
-    res.json(products);
-})
-
 
 
 
