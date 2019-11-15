@@ -1,18 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const uuidv1 = require('uuid/v1');
+// const uuidv1 = require('uuid/v1');
 const comments = require("./data/comments")
-const contacts = require("./data/contacts")
-const products = require("./data/products")
-const vehicles = require("./data/vehicles")
+// const contacts = require("./data/contacts")
+// const products = require("./data/products")
+// const vehicles = require("./data/vehicles")
 
 const app = express();
-const port = process.env.PORT || 4001;
-let commentCounter = comments.length;
+const port = process.env.PORT || 4000;
 console.log(commentCounter);
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(bodyParser.json);
+let commentCounter = comments.length;
 
 app.get("/comments", (req, res) => {
     res.json(comments);
@@ -25,14 +25,14 @@ app.get("/comments/:id", (req, res) => {
 })
 
 app.post("/comments", (req, res) => {
-    let newComment = {
+    comments.push({
         _id: commentCounter + 1,
         body: req.body.body,
         postId: 1
-    }
-    console.log(newComment);
+    })
+    res.json(comments);
 })
-
+/*
 let counter = contacts.length
 
 app.use(express.static("public"));
@@ -94,7 +94,7 @@ app.get('/vehicles/:id', (req, res) => {
 
     const match3 = vehicles.find(vehicle => vehicle._id === Number(id))
     res.json(match3)
-})
+}) */
 
 
 
