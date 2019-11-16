@@ -89,12 +89,7 @@ app.get('/vehicles', (req, res) => {
     res.json(vehicles)
 })
 
-app.get('/vehicles/:id', (req, res) => {
-    const id = req.params.id;
 
-    const match3 = vehicles.find(vehicle => vehicle._id === Number(id))
-    res.json(match3)
-}) */
 
 
 
