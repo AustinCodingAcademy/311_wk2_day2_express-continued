@@ -21,7 +21,7 @@ router.post('/comments', (req, res) => {
         body: req.body.body,
         postId: 1
     })
-    res.json(contacts)
+    res.json(comments)
 })
 
 
