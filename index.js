@@ -39,13 +39,49 @@ app.get('/vehicles/:id', (req, res) => {
 
 app.get('/comments/:id', (req, res) => {
   let comment = comments.find(comment => comment._id == req.params.id);
-  res.send(comment);
+  res.json(comment);
 });
 
 app.get('/products/:id', (req, res) => {
   let product = products.find(product => product._id == req.params.id);
-  res.send(product);
+  res.json(product);
 });
+
+let vehicleCounter = vehicles.length;
+let commentCounter = comments.length;
+let productCounter = products.length;
+
+app.post('/contacts', (req, res) => {
+  let id = contacts.length + 1;
+  let body = req.body;
+  body.id = id;
+  contacts.push(body);
+  res.json(body);
+})
+
+app.post('/comments', (req, res)=> {
+  commentCounter++
+  let body = req.body;
+  body._id = commentCounter;
+  comments.push(body)
+  res.json(body);
+})
+
+app.post('/vehicles', (req, res)=> {
+  vehicleCounter++
+  let body = req.body;
+  body._id = vehicleCounter;
+  vehicles.push(body);
+  res.json(body);
+})
+
+app.post('/products', (req, res)=> {
+  productCounter++
+  let body = req.body;
+  body._id = productCounter;
+  products.push(body);
+  res.json(body);
+})
 
 
 const port = process.env.PORT || 4001;
