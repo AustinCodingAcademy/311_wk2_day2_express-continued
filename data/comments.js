@@ -1,4 +1,4 @@
-module.exports = [
+const comments = [
   {
     "_id": 1,
     "body": "ACA is great!",
@@ -20,3 +20,5 @@ module.exports = [
     "postId": 1
   }
 ];
+
+module.exports = comments;
