@@ -8,15 +8,16 @@ const list = (req, res) => {
 
 const show = (req, res) => {
   let idSearched = req.params.id
-  const product = products.find(product=>product._id == idSearched)
+  const product = products.find(product =>
+  product._id == idSearched)
   res.json(product)
   };
 
 const create = (req, res) => {
-  let newProduct = req.body;
+  let product = req.body;
   productCounter += 1
-  newProduct._id = productCounter
-  products.push(newProduct)
+  product._id = productCounter
+  products.push(product)
   res.json(products)
   };
 

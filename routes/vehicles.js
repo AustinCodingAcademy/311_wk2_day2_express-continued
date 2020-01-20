@@ -8,6 +8,4 @@ router.get('/:id', vehiclesController.show)
 
 router.post('/', vehiclesController.create)
   
-
-
 module.exports = router;

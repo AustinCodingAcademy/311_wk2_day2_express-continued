@@ -8,15 +8,16 @@ const list = (req, res) => {
 
 const show = (req, res) => {
   let idSearched = req.params.id
-  const contact = contacts.find(contact=>contact._id == idSearched)
+  const contact = contacts.find(contact => 
+  contact._id == idSearched)
   res.json(contact)
  };
 
 const create = (req, res) => {
-  let newContact = req.body;
+  let contact = req.body;
   contactCounter += 1
-  newContact._id = contactCounter
-  contacts.push(newContact)
+  contact._id = contactCounter
+  contacts.push(contact)
   res.json(contacts)
  };
 

@@ -7,15 +7,16 @@ const list = (req, res) => {
 
 const show = (req, res) => {
   let idSearched = req.params.id
-  const vehicle = vehicles.find(vehicle=>vehicle._id == idSearched)
+  const vehicle = vehicles.find(vehicle => 
+  vehicle._id == idSearched)
   res.json(vehicle)
   };
 
 const create = (req, res) => {
-  let newVehicle = req.body;
+  let vehicle = req.body;
   vehicleCounter += 1
-  newVehicle._id = vehicleCounter
-  vehicles.push(newVehicle)
+  vehicle._id = vehicleCounter
+  vehicles.push(vehicle)
   res.json(vehicles)
   };
 

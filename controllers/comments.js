@@ -7,15 +7,16 @@ const list = (req, res) => {
 
 const show = (req, res) => {
   let idSearched = req.params.id
-  const comment = comments.find(comment=>comment._id == idSearched)
+  const comment = comments.find(comment => 
+  comment._id == idSearched)
   res.json(comment)
 };
 
 const create = (req, res) => {
-  let newComment = req.body;
+  let comment = req.body;
   commentCounter += 1
-  newComment._id = commentCounter
-  comments.push(newComment)
+  comment._id = commentCounter
+  comments.push(comment)
   res.json(comments)
   };
 
