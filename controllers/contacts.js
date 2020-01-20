@@ -1,4 +1,4 @@
-const contacts = require('./data/contacts');
+const contacts = require('../data/contacts');
 
 const list = (request, response) =>{
   response.json(contacts);

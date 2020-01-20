@@ -1,4 +1,4 @@
-const comments = require('./data/comments');
+const comments = require('../data/comments');
 
 const list = (request, response) =>{
   response.json(comments);

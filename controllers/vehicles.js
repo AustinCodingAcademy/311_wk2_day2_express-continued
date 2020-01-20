@@ -1,4 +1,4 @@
-const vehicles = require('./data/vehicles');
+const vehicles = require('../data/vehicles');
 
 const list = (request, response) =>{
   response.json(vehicles);
