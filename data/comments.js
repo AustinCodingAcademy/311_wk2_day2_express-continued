@@ -1,4 +1,6 @@
-module.exports = [
+// module.exports = [
+  exports.comments = [
+    // const comments = [
   {
     "_id": 1,
     "body": "ACA is great!",
