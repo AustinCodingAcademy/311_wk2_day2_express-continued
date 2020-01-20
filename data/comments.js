@@ -1,4 +1,6 @@
-module.exports = [
+// module.exports = [
+  exports.comments = [
+    // const comments = [
   {
     "_id": 1,
     "body": "ACA is great!",
@@ -20,3 +22,9 @@ module.exports = [
     "postId": 1
   }
 ];
+
+// const getAll = (req, res) => {
+//   res.send(comments)
+// }
+
+// module.exports ={getAll}

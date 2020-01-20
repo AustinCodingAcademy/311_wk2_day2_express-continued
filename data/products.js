@@ -1,4 +1,7 @@
-module.exports = [{
+// module.exports = [
+exports.products = [
+  // const products = [
+  {
     "_id": 1,
     "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
     "description": "Psychotropic drugs, not elsewhere classified",
@@ -209,3 +212,10 @@ module.exports = [{
     }
   ]
   }];
+
+  // const getAll = (req, res) => {
+  //   res.send(products)
+  // }
+  
+  // module.exports ={getAll}
+  

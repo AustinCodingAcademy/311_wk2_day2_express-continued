@@ -1,4 +1,7 @@
-module.exports = [{
+// module.exports = [
+  exports.vehicles = [
+    // const vehicles = [
+  {
     "_id": 1,
     "imgUrl": "./featured-img-1.jpg",
     "year": "2004",
@@ -239,4 +242,10 @@ module.exports = [{
     "city": "Santa Rosa",
     "isNew": true
   }];
+  
+  // const getAll = (req, res) => {
+  //   res.send(vehicles)
+  // }
+  
+  // module.exports ={getAll}
   

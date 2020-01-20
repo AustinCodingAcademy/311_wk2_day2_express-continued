@@ -1,4 +1,6 @@
-module.exports =[
+// module.exports =[
+exports.contacts = [
+  // const contacts = [
   {
     "_id": 1,
     "name": "Dale Cooper",
@@ -30,3 +32,10 @@ module.exports =[
     "avatar": "https://pbs.twimg.com/profile_images/718881904834056192/WnMTb__R.jpg"
   }
 ];
+
+
+// const getAll = (req, res) => {
+//   res.send(contacts)
+// }
+
+// module.exports = getAll;
