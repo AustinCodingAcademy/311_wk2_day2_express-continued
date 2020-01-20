@@ -6,7 +6,7 @@ const list = (request, response) =>{
 
 const show = (request, response) => {
   let id = request.params.id;
-  return products.json(products.find(x => x._id === parseInt(id)));
+  return response.json(products.find(x => x._id === parseInt(id)));
 }
 
 const create = (request, response) => {

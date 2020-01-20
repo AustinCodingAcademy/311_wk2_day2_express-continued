@@ -1,7 +1,7 @@
 const comments = require('../data/comments');
 
-const list = (request, response) =>{
-  response.json(comments);
+const list = (request, response) => {
+  return response.json(comments);
 }
 
 const show = (request, response) => {
