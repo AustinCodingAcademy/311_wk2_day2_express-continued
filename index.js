@@ -1,16 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const contacts = require('./data/contacts');
-const vehicles = require('./data/vehicles');
-const comments = require('./data/comments');
-const products = require('./data/products')
-
-
 const app = express();
 
 app.use(express.static('public'));
-
 app.use(bodyParser.json());
+app.use(router);
 
 // Routes to get all things
 
