@@ -22,9 +22,3 @@
     "postId": 1
   }
 ];
-
-// const getAll = (req, res) => {
-//   res.send(comments)
-// }
-
-// module.exports ={getAll}

@@ -114,13 +114,13 @@ Once completed, the web page should be able to list out the information, create 
 
 * Create a folder called "controllers" on the top level (next to data, routes) //done
 * Create the following controller files under this folder: //done
-  * contacts.js
-  * vehicles.js
+  * contacts.js //done
+  * vehicles.js //done
   * comments.js
   * products.js
 
   //done
-  
+
 * Move the appropriate "data" from the router files to the controller files
   * Ex. move `const comments = require("../data/comments")` into the controller file so it has access to the array
 * Take the code from each router file and move it into the corresponding controller file
