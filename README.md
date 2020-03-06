@@ -29,7 +29,7 @@ A web page has been created for us. Our job is to build the server.
   * /data/contacts
   * /data/vehicles
   * /data/comments
-  * /data/products
+  * /data/products -->
 * Add `app.get()` routes for the following:
   * "/contacts"
   * "/vehicles"
@@ -39,7 +39,7 @@ A web page has been created for us. Our job is to build the server.
 
 ### Create express routes to get one thing
 
-* Add `app.get()` routes for the following:
+ * Add `app.get()` routes for the following:
   * "/contacts/:id"
   * "/vehicles/:id"
   * "/comments/:id"
@@ -48,6 +48,7 @@ A web page has been created for us. Our job is to build the server.
 * Use `req.params.id` to .find() the item from the appropriate array (by its _id)
   * Example: `i._id == req.params.id`
 * `res.json()` the item found
+
 
 ### Create express routes to create one thing
 
