@@ -1,15 +1,14 @@
-// Index File Week2 Day #2
-// Justin Essler 
+// Index File Week2 Day #2 - Justin Essler 
 
 // import 3rd party
 const express = require("express");
 const bodyParser = require("body-parser");
 
 // import 1st party
-const contacts = require("./data/contacts");
-const comments = require("./data/comments");
-const products = require("./data/products");
-const vehicles = require("./data/vehicles");
+// const contacts = require("./data/contacts");
+// const comments = require("./data/comments");
+// const products = require("./data/products");
+// const vehicles = require("./data/vehicles");
 const contactsRoutes = require("./routes/contacts");
 const commentsRoutes = require("./routes/comments");
 const productsRoutes = require("./routes/products");
@@ -26,8 +25,6 @@ app.use(commentsRoutes);
 app.use(contactsRoutes);
 app.use(productsRoutes);
 app.use(vehiclesRoutes);
-
-
 
 // start listening on server ${port}
 app.listen(port, () => {

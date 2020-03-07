@@ -1,7 +1,7 @@
-const contacts = require("../data/contacts");
+// Contacts Controllers File
 
-// used for the create part of the assignment
-// let contactsCounter = contacts.length 
+const contacts = require("../data/contacts");
+// let contactsCounter = contacts.length;
 
 const displayAllContacts = (req,res) => {
     res.json(contacts);
@@ -13,15 +13,19 @@ function display1contact (req, res) {
     res.json(foundContact);
 }
 
-// used for the create part of the assignment
-// function create(res) {
-//     newUser {
-//         id: contactsCounter + 1;
-//     }
-// }
+function create(req, res) {
+    let newContact = {
+        "_id": contacts.length+1,
+        ...req.body
+      }
+    contacts.push(newContact);
+    res.json(contacts[contacts.length -1])
+    // res.send('success-jte')
+}
 
 
 module.exports = {
     displayAllContacts,
-    display1contact
+    display1contact,
+    create
 }

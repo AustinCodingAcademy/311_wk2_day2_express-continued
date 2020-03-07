@@ -1,13 +1,10 @@
 // Products Controllers File
 
 const products = require("../data/products");
-
-// used for the create part of the assignment
-let productsCounter = products.length
+// let productsCounter = products.length
 
 const list = (req,res) => {
     res.json(products);
-
 };
 
 function show (req, res) {
@@ -18,14 +15,12 @@ function show (req, res) {
 
 function create (req, res) {
     let newProduct = {
-        _id: Number(productsCounter + 1),
-        body: req.body,
-        postId: 1 
+        "_id": products.length + 1,
+        ...req.body,
     };
-
-    // console.log(newProduct);
-
-    products.push(req.body);
+    products.push(newProduct);
+    res.json(products[products.length -1]);
+    //   res.send('success-jte')
 
 }
 

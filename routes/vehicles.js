@@ -7,16 +7,7 @@ const vehiclesController = require ("../controllers/vehicles")
 
 router.get ("/vehicles", vehiclesController.listVehicles);
 router.get ("/vehicles/:id", vehiclesController.displaySingleVehicle)
-
-
-
-
-
-
-
-
-
-
+router.post ("/vehicles", vehiclesController.create)
 
 
 module.exports = router;

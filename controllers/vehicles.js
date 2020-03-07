@@ -1,9 +1,7 @@
 // Vehicles Controllers File
 
 const vehicles = require("../data/vehicles");
-
-// used for the create part of the assignment
-// let contactsCounter = contacts.length 
+// let vehicleCounter = vehicles.length 
 
 const listVehicles = (req,res) => {
     res.json(vehicles);
@@ -16,15 +14,20 @@ function displaySingleVehicle (req, res){
     res.json(foundVehicle);
 }
 
-// used for the create part of the assignment
-// function create(res) {
-//     newUser {
-//         id: contactsCounter + 1;
-//     }
-// }
+
+function create(req, res) {
+    let newVehicle = {
+        "_id": vehicles.length+1,
+        ...req.body
+    }
+    vehicles.push(newVehicle);
+    res.json(vehicles[vehicles.length -1]);
+    //   res.send('success-jte')
+}
 
 
 module.exports = {
     listVehicles,
-    displaySingleVehicle
+    displaySingleVehicle,
+    create
 }
