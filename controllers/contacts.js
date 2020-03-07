@@ -1,6 +1,6 @@
 const contacts = require('../data/contacts');
 
-let contactsCounter = contacts.length;
+// let contactsCounter = contacts.length;
 
 const list = (req, res)=> {
     res.json(contacts);
@@ -11,17 +11,13 @@ const show = (req, res)=>{
     res.json(found);
 }
 const create = (req, res)=>{
-    const id = contactsCounter + 1;
+    const id = contacts.length + 1;
     let user = {
         ...req.body,
         _id: id,
     }
     contacts.push(user);
-    res.json(users[users.length - 1])
-    
-    // const newContact = ;
-    // contacts.push(newContact);
-    // res.send(contacts);
+    res.json(contacts[contacts.length - 1])
 }
 
 module.exports = {

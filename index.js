@@ -15,7 +15,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.use(contactsRoutes);
-// app.use(commentsRoutes);
+app.use(commentsRoutes);
+app.use(vehiclesRoutes);
+app.use(productsRoutes);
 // app.get("/contacts", (req, res)=>{
 //     res.json(contact);
 // });
