@@ -1,24 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-let contacts = require("../data/contacts");
-let lastContactsId = contacts.length;
+const contactsController = require('../controllers/contacts')
 
+router.get('/contacts', contactsController.list)
 
-router.get('/contacts', (req, res) => {
-    res.json(contacts);
-});
+router.get('/contacts/:id', contactsController.show)
 
-router.get('/contacts/:id', (req, res) => {
-    let contact = contacts.find(contact => contact._id == req.params.id);
-    res.json(contact);
-});
-
-router.post('/contacts', (req, res) => {
-    let newEntry = req.body;
-    let newId = lastContactsId++;
-    newEntry._id = newId;
-    contacts.push(newEntry);
-});
+router.post('/contacts', contactsController.create)
 
 module.exports = router;
+
