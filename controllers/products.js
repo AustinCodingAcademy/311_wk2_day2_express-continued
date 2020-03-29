@@ -13,8 +13,8 @@ const show = (req, res) => {
 
 const create = (req, res) => {
     let newEntry = req.body;
-    let newId = lastProductsId++;
-    newEntry._id = newId;
+    lastProductsId++;
+    newEntry._id = lastProductsId;
     products.push(newEntry);
 };
 

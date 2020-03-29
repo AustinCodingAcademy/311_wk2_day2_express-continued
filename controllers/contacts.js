@@ -13,8 +13,8 @@ const show = (req, res) => {
 
 const create = (req, res) => {
     let newEntry = req.body;
-    let newId = lastContactsId++;
-    newEntry._id = newId;
+    lastContactsId++;
+    newEntry._id = lastContactsId;
     contacts.push(newEntry);
 };
 

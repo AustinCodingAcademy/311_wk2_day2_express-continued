@@ -12,8 +12,8 @@ const show = (req, res) => {
 
 const create = (req, res) => {
     let newEntry = req.body;
-    let newId = lastCommentsId++;
-    newEntry._id = newId;
+    lastCommentsId++;
+    newEntry._id = lastCommentsId;
     comments.push(newEntry);
 };
 
