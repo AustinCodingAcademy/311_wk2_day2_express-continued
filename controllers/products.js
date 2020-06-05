@@ -10,13 +10,20 @@ const show = (req, res) => {
 }
 
 const create = (req, res) => {
-  // let productId = products.length + 1;
+  let newProductId = products.length + 1;
 
-  // let newProduct {
+  let newProduct = {
+    _id: newProductId,
+    name: req.body.name,
+    description: req.body.description,
+    rating: req.body.rating,
+    imgUrl: req.body.imgUrl,
+    price: req.body.price,
+    category: req.body.category,
+  }
 
-  // }
-  // products.push(newProduct)
-  // res.json(products)
+  products.push(newProduct)
+  res.json(products)
 }
 
 module.exports = { list, show, create}
