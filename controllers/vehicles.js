@@ -10,10 +10,20 @@ const show = (req, res) => {
 }
 
 const create = (req, res) => {
-  let newVehicleId = vehicle.length + 1;
+  let newVehicleId = vehicles.length + 1;
 
   let newVehicle = {
     _id: newVehicleId,
+    imgUrl: req.body.imgUrl,
+    year: req.body.year,
+    make: req.body.make,
+    model: req.body.model,
+    price: req.body.price,
+    km: req.body.km,
+    miles: req.body.miles,
+    fuel: req.body.fuel,
+    city: req.body.city,
+    isNew: req.body.isNew
   }
 
   vehicles.push(newVehicle)
