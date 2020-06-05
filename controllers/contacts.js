@@ -10,7 +10,7 @@ const show = (req, res) => {
 }
 
 const create = (req, res) => {
-  let newContactId = contacts.length+1;
+  let newContactId = contacts.length + 1;
 
   let newContact = {
     _id: newContactId,
