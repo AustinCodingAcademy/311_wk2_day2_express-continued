@@ -13,7 +13,7 @@ const show = (req, res) => {
 const create = (req, res) => {
   let counter = products.length + 1
   const newProducts = {
-      postId : 1,
+      postId : counter,
       _id: req.body._1,
       name: req.body.name,
       description: req.body.name,
@@ -21,48 +21,7 @@ const create = (req, res) => {
       imgUrl: req.body.imgUrl,
       price: req.body.price,
       category: req.body.category,
-      reviews: req.body.reviews [
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          },
-          {
-              description: req.body.description,
-              rating: req.body.rating
-          }
-      ]
+      reviews: req.body.reviews
   }
   
   newProducts.postId = counter

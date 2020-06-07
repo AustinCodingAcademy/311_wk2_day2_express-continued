@@ -13,7 +13,7 @@ const show = (req, res) => {
 const create = (req, res) => {
     let counter = vehicles.length + 1
     const newVehicle = {
-        postId: 1,
+        postId: counter,
         _id: req.body._id,
         imgUrl: req.body.imgUrl,
         year: req.body.year,

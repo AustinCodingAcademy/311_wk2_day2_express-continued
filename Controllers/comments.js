@@ -13,7 +13,7 @@ const show = (req, res) => {
 const create = (req, res) => {
     let counter = comments.length + 1
     const newComments = {
-        postId : 1,
+        postId : counter,
         _id: req.body._id,
         body: req.body.body,
         postId: req.body.postId

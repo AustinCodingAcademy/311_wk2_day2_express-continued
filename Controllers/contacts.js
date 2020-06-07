@@ -13,7 +13,7 @@ const show = (req, res) => {
 const create = (req, res) => {
     let counter = contacts.length + 1 
     const newContact = {
-        postId : 1,
+        postId : counter,
         _id: req.body._id,
         name: req.body.name,
         occupation: req.body.occupation,
