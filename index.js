@@ -1,37 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const comments = require('./data/comments')
+//const comments = require('./data/comments')
 const contacts = require('./data/contacts')
 const products = require('./data/products')
 const vehicles = require('./data/vehicles')
+const commentRouter = require('./routes/comments')
 const app = express();
+
+app.use(commentRouter)
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 let counter = 1; 
 
-app.get('/comments',(req,res)=>{
-  res.json(comments)
-})
-app.get('/comments/:commentId',(req,res)=>{
-  let commentIdString = req.params.commentId
-  let commentId = parseInt(commentIdString)
-  for(let i = 0; i < comments.length;i++){
-    if(comments[i]._id === commentId){
-      return res.json(comments[i])
-    }
-  }
-})
-app.post('/comments',(req,res)=>{
-  userPost = req.body
-  console.log(userPost.body)
-  let post = {
-    _id: 5,
-    body: userPost.body
-  }
-  comments.push(post)
-  return res.json(comments)
-})
+
 app.get('/contacts',(req,res)=>{
   res.json(contacts)
 })
