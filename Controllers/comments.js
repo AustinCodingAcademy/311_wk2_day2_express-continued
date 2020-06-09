@@ -5,22 +5,21 @@ const list = (req, res) => {
 };
 
 const show = (req, res) => {
-  let getId = comments.find((user) => user._id === parseInt(req.params.id));
-  res.json(getId);
+  const findComments = comments.find(
+    (comment) => comment._id === parseInt(req.params.id)
+  );
+  res.json(findComments);
 };
 
 const create = (req, res) => {
   let counter = comments.length + 1;
-  const newComments = {
-    postId: counter,
-    _id: req.body._id,
-    body: req.body.body,
-    postId: req.body.postId,
+  let newComment = {
+    ...req.body,
+    postId: 1,
   };
-
-  comments.postId = counter;
-  comments.push(newComments);
-  res.json(comments);
+  newComment._id = counter;
+  comments.push(newComment);
+  res.json({ msg: "New Contact Added!", comment: newComment });
 };
 
 module.exports = { list, show, create };

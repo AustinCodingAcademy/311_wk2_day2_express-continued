@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const vehicleController = require("../Controllers/vehicles");
+const vehicleController = require("../controllers/vehicles");
 
 router.get("/vehicles", vehicleController.list);
 

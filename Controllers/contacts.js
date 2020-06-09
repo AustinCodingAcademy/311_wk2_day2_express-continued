@@ -5,23 +5,21 @@ const list = (req, res) => {
 };
 
 const show = (req, res) => {
-  let getId = contacts.find((user) => user._id === parseInt(req.params.id));
-  res.json(getId);
+  const findContacts = contacts.find(
+    (contact) => contact._id === parseInt(req.params.id)
+  );
+  res.json(findContacts);
 };
 
 const create = (req, res) => {
   let counter = contacts.length + 1;
-  const newContact = {
+  let newContact = {
+    ...req.body,
     postId: counter,
-    _id: req.body._id,
-    name: req.body.name,
-    occupation: req.body.occupation,
-    avatar: req.body.avatar,
   };
-
-  newContact.postId = counter;
+  newContact._id = counter;
   contacts.push(newContact);
-  res.json(contacts);
+  res.json({ msg: "New Contact Added!", contact: newContact });
 };
 
 module.exports = { list, show, create };
