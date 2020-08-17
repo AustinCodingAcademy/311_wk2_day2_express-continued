@@ -1,0 +1,1 @@
+const comment = require("./comments")
