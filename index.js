@@ -10,6 +10,7 @@ app.use(contactRouter)
 //  Line 6 allows express to call the static HTML for public eye //
 
 
+
 // Gets the contacts
 
 // This always goes to the bottom to read everythig ABOVE!! //
