@@ -12,7 +12,7 @@ const vehicles = require("./data/vehicles");
 const comments = require("./data/comments");
 const products = require("./data/products");
 
-app.get("/contacts", (req, res) => {
+app.use("/contacts", (req, res) => {
     return res.json(contacts)
 })
 
@@ -21,20 +21,32 @@ app.get("/contacts/:id", (req, res) => {
     return res.json(contacts[id])
 })
 
-app.get("/vehicles", (req, res) => {
+app.use("/vehicles", (req, res) => {
     return res.json(vehicles)
 })
 
-app.get("/comments", (req, res) => {
+app.get("/vehicles/:id", (req, res) => {
+    let id = req.params.id - 1;
+    return res.json(vehicles[id])
+})
+
+app.use("/comments", (req, res) => {
     return res.json(comments)
 })
 
-app.get("/products", (req, res) => {
+app.get("/comments/:id", (req, res) => {
+    let id = req.params.id - 1;
+    return res.json(comments[id])
+})
+
+app.use("/products", (req, res) => {
     return res.json(products)
 })
 
-const app = express();
-
+app.get("/products/:id", (req, res) => {
+    let id = req.params.id - 1;
+    return res.json(products[id])
+})
 
 app.listen(port, () => {
  console.log(`Web server is listening on port ${port}!`);
