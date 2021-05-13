@@ -43,8 +43,39 @@ app.post('/contacts', function (req, res) {
   res.json(contacts[contacts.length-1])
 })
 
+app.post('/products', function (req, res) {
+  products.push({
+    '_id': products.length+1,
+    'name': 'Apples',
+    'description': 'Random bag of apples',
+    'rating': '3',
+    'imgURL': 'https://pixabay.com/photos/apple-fruit-food-vitamins-red-hat-3313225/',
+    'price': '$12.89',
+    'category': 'food',
+    'reviews': [{
+      "description": "cute apples",
+      "rating": 4
+    }],
+  })
+  res.json(products[products.length-1])
+})
 
-
+app.post('/vehicles', function (req, res) {
+  vehicles.push({
+    '_id': vehicles.length+1,
+    'imgUrl': "https://pixabay.com/images/id-1858351/",
+    'year': '200ish',
+    'make': 'ASTON MARTIN',
+    'model': 'Modern James Bond',
+    'price': '$7456.99',
+    'km': 5404,
+    'miles': 1102,
+    'fuel': 'Gas',
+    'city': 'London',
+    'isNew': false,
+  })  
+  res.json(vehicles[vehicles.length-1])
+})
 
 
 
