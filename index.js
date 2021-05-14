@@ -6,7 +6,7 @@ const dataContacts = require("./data/contacts");
 const dataVehicles = require("./data/vehicles");
 const dataComments = require("./data/comments");
 const dataProducts = require ("./data/products");
-const comments = require("./data/comments");
+
 
 app.get('./data/comments', function (req, res) {
   res.json(comments)
@@ -33,6 +33,11 @@ app.post('/comments', function (req, res) {
   res.json(comments[comments.length-1])
 })
 
+
+// app.post('/', function (req, res) {
+//   res.send('contacts.body')
+// })
+
 app.post('/contacts', function (req, res) {
   contacts.push({
     '_id': contacts.length+1,
@@ -40,7 +45,7 @@ app.post('/contacts', function (req, res) {
     'occupation': 'Archaeologist',
     'avatar': "https://upload.wikimedia.org/wikipedia/en/8/8c/Indiana_Jones_and_the_Last_Crusade.png"
   })  
-  res.json(contacts[contacts.length-1])
+  res.json(contacts[contacts.length-1](req.body))
 })
 
 app.post('/products', function (req, res) {
