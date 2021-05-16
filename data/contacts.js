@@ -1,6 +1,6 @@
 module.exports =[
   {
-    "_id": 1,
+    "_id:": 1,
     "name": "Dale Cooper",
     "occupation": "FBI Agent",
     "avatar": "https://upload.wikimedia.org/wikipedia/en/5/50/Agentdalecooper.jpg"
