@@ -14,9 +14,11 @@ const show = (req, res) => {
 
 const create = (req, res) => {
   let counter = ++products.length
-  let postId = counter
-  req.body.push(postId)
-  products.push(req.body)
+  products.push({
+    _id: ++counter,
+    body: req.body.message,
+    postId: 1
+  })
   res.json(products[products.length - 1])
 }
 

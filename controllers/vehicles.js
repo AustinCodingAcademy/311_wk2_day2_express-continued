@@ -14,9 +14,11 @@ const show = (req, res) => {
 
 const create = (req, res) => {
   let counter = ++vehicles.length
-  let postId = counter
-  req.body.push(postId)
-  vehicles.push(req.body)
+  vehicles.push({
+    _id: ++counter,
+    body: req.body.message,
+    postId: 1
+  })
   res.json(vehicles[vehicles.length - 1])
 }
 

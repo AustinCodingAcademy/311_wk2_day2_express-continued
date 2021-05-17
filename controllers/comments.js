@@ -1,5 +1,4 @@
 const comments = require("../data/comments")
-const { post } = require("../routes/comments")
 
 const list = (req, res) => {
   res.json(comments)
