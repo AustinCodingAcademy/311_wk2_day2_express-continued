@@ -1,4 +1,5 @@
 const comments = require("../data/comments")
+const { post } = require("../routes/comments")
 
 const list = (req, res) => {
   res.json(comments)
@@ -13,12 +14,12 @@ const show = (req, res) => {
 }
 
 const create = (req, res) => {
-  const postId = "1"
   let counter = ++comments.length
-  let id = counter
-  req.body.push(postId)
-  req.body.push(id)
-  comments.push(req.body)
+  comments.push({
+    _id: ++counter,
+    body: req.body.message,
+    postId: 1
+  })
   res.json(comments[comments.length - 1])
 }
 
