@@ -1,4 +1,5 @@
-module.exports = [{
+module.exports = [
+  {
     "_id": 1,
     "imgUrl": "./featured-img-1.jpg",
     "year": "2004",
