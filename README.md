@@ -19,7 +19,7 @@ A web page has been created for us. Our job is to build the server.
 * Navigate to http://localhost:4000 to see the web page
 
 ### Body-parser
-
+//HELP
 * After "express.static", add body parser middleware to express
   * Remember: `bodyParser.json()`
 
