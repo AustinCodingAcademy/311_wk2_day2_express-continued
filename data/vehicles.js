@@ -1,4 +1,4 @@
-module.exports = [{
+const vehicles = [{
     "_id": 1,
     "imgUrl": "./featured-img-1.jpg",
     "year": "2004",
@@ -240,3 +240,4 @@ module.exports = [{
     "isNew": true
   }];
   
+  module.exports = vehicles;
